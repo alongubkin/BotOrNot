@@ -1,0 +1,116 @@
+html {
+    background: #F8F8F8;
+    font-family: "Helvetica neue",Helvetica,Arial,sans-serif;
+}
+a {
+    color: #0654BA !important;
+    text-decoration: none;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.logo {
+    text-align: center;
+}
+
+.tab-container {
+    background: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    margin-top: 20px;
+}
+
+.tabs {
+    width: 100%;
+    height: 45px;
+}
+.tab-shade {
+    position: relative;
+    width: 1%;
+    background-color: #D7D7D7;
+    border: 1px solid #D7D7D7;
+    height: 38px;
+    margin: 5px 0px 0px;
+    display: inline-block;
+    left: -1.7%;
+}
+.tab-left {
+    background: #EEE;
+    width: 49%;
+    height: 100%;
+    float: left;
+    border: 1px solid #D6D6D6;
+    border-radius: 3px 0px 0px 3px;
+    border-style: none solid solid none;
+}
+.tab-right {
+    width: 49%;
+    height: 100%;
+    float: right;
+}
+.tab-title {
+    margin: 12px 0 0 17%;
+}
+
+.tab-title > * {
+    vertical-align: middle;
+}
+.clear-both {
+    clear: both;
+}
+
+.form-container {
+    margin: 20px 14px;
+}
+.input {
+    margin: 0px 0px 10px;
+    padding: 0.5em;
+    color: #333;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.8), 0px 1px 2px rgba(0, 0, 0, 0.06) inset;
+}
+.input-wide {
+    width: 95%;
+}
+.input-half {
+    width: 43%;
+}
+.input-half-right {
+    float: right;
+}
+.btn {
+    margin: 20px 0;
+    width: 100%;
+    height: 40px;
+    background: transparent linear-gradient(to bottom , #0079BC, #00509D) repeat scroll 0% 0%;
+    color: #FFF;
+    padding: 0.5em 1.2em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.04);
+    vertical-align: baseline;
+}
+
+.agreement {
+    margin: 10px;
+    font-size: 12px;
+}
+
+.biz {
+    border: 1px solid #CCC;
+    border-style: solid none none none;
+    padding-top: 20px;
+}
+
+.biz h1 {
+    font-size: 16px;
+}
+.biz p {
+    margin: 0;
+    font-size: 14px;
+}
