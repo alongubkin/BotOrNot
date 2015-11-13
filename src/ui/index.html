@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>BotOrNot</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="animate.css" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="captcha">
+      <h1>If you're not a <img src="images/bot.png">, please select the similar things:</h1>
+      <div class="row">
+        <div class="image col-md-4 col-xs-6" data-product-id="5">
+          <img class="product-image" src="images/1.jpg" />
+          <img class="check animated flip" src="images/check2.png" />
+        </div>
+        <div class="image col-md-4 col-xs-6"  data-product-id="7">
+          <img class="product-image" src="images/2.jpg" />
+          <img class="check animated flip" src="images/check2.png" />
+        </div>
+        <div class="image col-md-4 col-xs-6" data-product-id="8">
+          <img class="product-image" src="images/3.jpg" />
+          <img class="check animated flip" src="images/check2.png" />
+        </div>
+        <div class="image col-md-4 col-xs-6" data-product-id="9">
+          <img class="product-image" src="images/4.jpg" />
+          <img class="check animated flip" src="images/check2.png" />
+        </div>
+        <div class="image col-md-4 col-xs-6" data-product-id="10">
+          <img class="product-image" src="images/5.jpg" />
+          <img class="check animated flip" src="images/check2.png" />
+        </div>
+        <div class="image col-md-4 col-xs-6" data-product-id="11">
+          <img class="product-image" src="images/6.jpg" />
+          <img class="check animated flip" src="images/check2.png" />
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="fastclick.js"></script>
+    <script> 
+      $(function () {
+        var selected = [];
+
+        $(".image").fastClick(function () {
+          var productId = $(this).attr("data-product-id");
+          var index = selected.indexOf(productId);
+          if (index === -1) {
+            selected.push(productId);
+            $(this).addClass("checked");
+          } else {
+            selected.splice(index, 1);
+            $(this).removeClass("checked");
+          }
+
+          if (selected.length === 3 && 
+              selected.indexOf("5") !== -1 && 
+              selected.indexOf("9") !== -1 &&
+              selected.indexOf("11") !== -1) {
+            console.log("success");
+          }
+        })
+      });
+    </script>
+  </body>
+</html>

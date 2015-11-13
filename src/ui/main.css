@@ -1,0 +1,121 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+}
+
+.captcha {
+	margin: auto;
+	max-width: 480px;
+	text-align: center;
+}
+
+.captcha h1 {
+	font-size: 1.2em;
+	color: #888;
+	margin-bottom: 25px;
+	font-weight: normal;
+}
+
+.captcha h1 img {
+	width: 55px;
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+}
+
+.captcha .image {
+	text-align: center;
+}
+
+.captcha .image img {
+	border: 1px solid #bbb;
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+	opacity: 1;
+	margin: 5px 0;
+}
+
+.captcha .image .product-image {
+	z-index: 0;
+}
+
+.captcha .image .check {
+	display: none;
+	z-index: 100;
+	-webkit-animation-duration: 0.5s;
+}
+
+.captcha .image.checked:after {
+	background: rgba(221, 221, 221, 0.5);
+}
+
+.captcha .image.checked .check {
+	display: block;
+	opacity: 0.9;
+	position: absolute;
+	top: 0;
+	left: 15px;
+	width: 150px;
+	height: 150px;
+	border: 0;
+}
+
+.captcha .image.checked .product-image {
+	opacity: 0.5 !important;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+	.captcha {
+		padding: 0 30px 30px 30px;
+	}
+
+	.captcha .image img {
+		width: 120px;
+		height: 120px;
+	}
+
+	.captcha .image.checked .check {
+		width: 120px;
+		height: 120px;
+		left: 23px;
+	}
+}
+
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+
+	.captcha .image img {
+		box-shadow: -5px -5px 53px -24px #888;
+	}
+
+	.captcha .image:not(.checked):after {
+	    position: absolute;
+	    opacity: 0;
+	    transition: all 0.5s;
+	    -webkit-transition: all 0.5s;
+	    content: '\A';
+	    width: 150px; 
+	    height: 150px;
+	    top: 5px; 
+	    left: 15px;
+	    background: rgba(221, 221, 221, 0.5);
+	    border-radius: 50%;
+	}
+
+	.captcha .image:not(.checked):hover:after {
+	    opacity: 0;
+	}
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
