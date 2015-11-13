@@ -135,10 +135,41 @@
   box-shadow: none;
 }
 
-
 .continue-button {
 	margin-top: 25px;
 }
+
+.checkx {
+  fill: none;
+  stroke: green;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+
+.checkx {
+	stroke-dasharray: 60 200;
+	animation: checkx 1.5s cubic-bezier(0.5, 0, 0.6, 1) forwards 0.0s; 
+	opacity: 0;
+}
+
+@-webkit-keyframes checkx {
+	from {stroke-dashoffset: 60;
+  opacity: 1;}
+
+	to {stroke-dashoffset: 293;
+	opacity: 1;}
+}
+
+.success {
+  display: none;
+  width: 60%;
+  padding-top: 103px;
+  padding-bottom: 103px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
