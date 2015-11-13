@@ -1,9 +1,3 @@
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #fff;
-}
-
 .captcha {
 	margin: auto;
 	max-width: 480px;
