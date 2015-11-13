@@ -102,7 +102,10 @@
                     somedialog = document.getElementById( dlgtrigger.getAttribute( 'data-dialog' ) ),
                     dlg = new DialogFx( somedialog );
 
-                dlgtrigger.addEventListener( 'click', dlg.toggle.bind(dlg) );
+                dlgtrigger.addEventListener( 'click', function () {
+                    $(".checked").removeClass("checked");
+                    dlg.toggle.bind(dlg)();
+                });
 
             })();
         
