@@ -12,59 +12,9 @@ angular.module('ionicApp', ['ionic'])
       url: '/forgot-password',
       templateUrl: 'templates/forgot-password.html'
     })
-    .state('tabs', {
-      url: '/tab',
-      abstract: true,
-      templateUrl: 'templates/tabs.html'
-    })
-    .state('tabs.home', {
+    .state('home', {
       url: '/home',
-      views: {
-        'home-tab': {
-          templateUrl: 'templates/home.html',
-          controller: 'HomeTabCtrl'
-        }
-      }
-    })
-    .state('tabs.facts', {
-      url: '/facts',
-      views: {
-        'home-tab': {
-          templateUrl: 'templates/facts.html'
-        }
-      }
-    })
-    .state('tabs.facts2', {
-      url: '/facts2',
-      views: {
-        'home-tab': {
-          templateUrl: 'templates/facts2.html'
-        }
-      }
-    })
-    .state('tabs.about', {
-      url: '/about',
-      views: {
-        'about-tab': {
-          templateUrl: 'templates/about.html'
-        }
-      }
-    })
-    .state('tabs.navstack', {
-      url: '/navstack',
-      views: {
-        'about-tab': {
-          templateUrl: 'templates/nav-stack.html'
-        }
-      }
-    })
-    .state('tabs.contact', {
-      url: '/contact',
-      views: {
-        'contact-tab': {
-          templateUrl: 'templates/contact.html'
-        }
-      }
+      templateUrl: 'templates/home.html',  
     });
 
 
@@ -72,11 +22,11 @@ angular.module('ionicApp', ['ionic'])
 
 })
 
-.controller('SignInCtrl', function($scope, $state, $ionicModal) {
+.controller('SignInCtrl', function($scope, $state, $timeout, $ionicModal) {
   
   $scope.signIn = function(user) {
     console.log('Sign-In', user);
-    $state.go('tabs.home');
+    $state.go('home');
   };
   
   $ionicModal.fromTemplateUrl('my-modal.html', {
@@ -89,7 +39,6 @@ angular.module('ionicApp', ['ionic'])
   
   $scope.openModal = function() {
     $scope.modal.show();
-    
     
     var selected = [];
     $(".image").click(function () {
@@ -110,7 +59,19 @@ angular.module('ionicApp', ['ionic'])
         console.log("success");
       }
     })
-    
+    $(".continue-button").click(function () {
+      $(".success").show();
+      $(".captcha").hide();
+
+      setTimeout(function () {
+        $scope.$apply(function () {
+          $scope.modal.hide();
+          $timeout(function () {
+            $state.go('home');
+          }, 50);
+        });
+      }, 2000);
+    });    
   };
   $scope.closeModal = function() {
     $scope.modal.hide();

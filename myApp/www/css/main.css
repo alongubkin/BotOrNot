@@ -1,8 +1,8 @@
-
 .captcha {
 	margin: auto;
 	max-width: 480px;
 	text-align: center;
+	margin-top: 10px;
 }
 
 .captcha h1 {
@@ -17,7 +17,7 @@
     -webkit-animation: spin 10s linear infinite;
     -moz-animation: spin 10s linear infinite;
     animation: spin 10s linear infinite;
-		vertical-align: middle;
+    vertical-align: middle;
 }
 
 .captcha .image {
@@ -50,9 +50,7 @@
 .captcha .image.checked .check {
 	display: block;
 	opacity: 0.9;
-	position: absolute;
-	top: 0;
-	left: 15px;
+	margin-top: -125px;
 	width: 150px;
 	height: 150px;
 	border: 0;
@@ -110,6 +108,65 @@
 	.captcha .image:not(.checked):hover:after {
 	    opacity: 0;
 	}
+}
+
+.belize-hole-flat-button {
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+  height: 60px;
+  padding: 0;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #2980b9;
+  border: 0;
+  border-bottom: 2px solid #2475ab;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -2px #2475ab;
+  box-shadow: inset 0 -2px #2475ab;
+}
+.belize-hole-flat-button:active {
+  top: 1px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.continue-button {
+	margin-top: 5px;
+}
+
+.checkx {
+  fill: none;
+  stroke: green;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+
+.checkx {
+	stroke-dasharray: 60 200;
+	animation: checkx 1.5s cubic-bezier(0.5, 0, 0.6, 1) forwards 0.0s; 
+	opacity: 0;
+}
+
+@-webkit-keyframes checkx {
+	from {stroke-dashoffset: 60;
+  opacity: 1;}
+
+	to {stroke-dashoffset: 293;
+	opacity: 1;}
+}
+
+.success {
+  display: none;
+  width: 60%;
+  padding-top: 103px;
+  padding-bottom: 103px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
