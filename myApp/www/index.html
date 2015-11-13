@@ -6,8 +6,13 @@
     <title>Sign-in, Then Tabs Example</title>
 
     <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <link href="/css/grid.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-    <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/fastclick.js"></script>
     
   </head>
 
@@ -34,7 +39,7 @@
             </label>
           </div>
           <div class="padding">
-            <button class="button button-block button-positive" ng-click="signIn(user)">
+            <button class="button button-block button-positive" ng-click="openModal()">
               Sign-In
             </button>
             <p class="text-center">
@@ -44,6 +49,46 @@
         </ion-content>
       </ion-view>
     </script>
+    
+    <script id="my-modal.html" type="text/ng-template">
+      <ion-modal-view>
+        <ion-header-bar>
+          <h1 class="title">My Modal title</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="captcha">
+            <h1>If youre not a <img src="images/bot.png">, please select the similar things:</h1>
+            <div class="row">
+              <div class="image col-md-4 col-xs-6" data-product-id="5">
+                <img class="product-image" src="images/1.jpg" />
+                <img class="check animated flip" src="images/check2.png" />
+              </div>
+              <div class="image col-md-4 col-xs-6"  data-product-id="7">
+                <img class="product-image" src="images/2.jpg" />
+                <img class="check animated flip" src="images/check2.png" />
+              </div>
+              <div class="image col-md-4 col-xs-6" data-product-id="8">
+                <img class="product-image" src="images/3.jpg" />
+                <img class="check animated flip" src="images/check2.png" />
+              </div>
+              <div class="image col-md-4 col-xs-6" data-product-id="9">
+                <img class="product-image" src="images/4.jpg" />
+                <img class="check animated flip" src="images/check2.png" />
+              </div>
+              <div class="image col-md-4 col-xs-6" data-product-id="10">
+                <img class="product-image" src="images/5.jpg" />
+                <img class="check animated flip" src="images/check2.png" />
+              </div>
+              <div class="image col-md-4 col-xs-6" data-product-id="11">
+                <img class="product-image" src="images/6.jpg" />
+                <img class="check animated flip" src="images/check2.png" />
+              </div>
+            </div>
+          </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+
 
     <script id="templates/forgot-password.html" type="text/ng-template">
       <ion-view view-title="Forgot Password">
